@@ -16,7 +16,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    NSDate *date = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    [formatter setDateFormat:@"hh:mm"];
+    self.label1.text = [formatter stringFromDate:date];
+    
+    [formatter setDateFormat:@"HH:mm"];
+    self.label2.text = [formatter stringFromDate:date];
 }
 
 - (void)didReceiveMemoryWarning {
